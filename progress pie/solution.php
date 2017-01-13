@@ -16,8 +16,8 @@ foreach ($input as $row) {
     $pointAngel = ($angelOfPointOnCircle + 90) % 360; // +90 because we start from 1.5PI //%360 make angel from 0 to 360
 
     $result = 'white';
-    if($p == 100 || $angel >= $pointAngel){
-        $result = sqrt(pow(50 - $x, 2) + pow(50 - $y, 2)) <= 50 ? 'black' : 'white';
+    if($p != 0 && ($p == 100 || $angel >= $pointAngel)){
+        $result = sqrt(pow($x - 50, 2) + pow($y - 50, 2)) <= 50 ? 'black' : 'white';
     }
     $results[] = 'Case #' . $i . ': ' . $result;
     $i++;
